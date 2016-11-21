@@ -1,0 +1,52 @@
+{
+  "name": "@bongione/recurrent-task",
+  "version": "0.0.1",
+  "description": "Run named tasks at specified intervals, some error logging on top",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && babel src --out-dir lib",
+    "build-watch": "npm run clean && babel src --watch --out-dir lib",
+    "lint": "eslint src",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "prepublish": "npm run lint && npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindiply/recurrent-task.git"
+  },
+  "keywords": [
+    "interval",
+    "task",
+    "recurrent"
+  ],
+  "author": "Paolo Ferdinando Bongiovanni <paolo.bongiovanni@mindiply.com>",
+  "license": "\tApache-2.0",
+  "bugs": {
+    "url": "https://github.com/mindiply/recurrent-task/issues"
+  },
+  "homepage": "https://github.com/mindiply/recurrent-task#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "cross-env": "^3.1.3",
+    "eslint": "^3.10.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0-0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.1.2",
+    "rimraf": "^2.5.4"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@bongione/bunyan4lib": "0.0.2",
+    "lodash": "^4.17.2"
+  }
+}
